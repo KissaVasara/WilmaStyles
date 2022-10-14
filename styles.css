@@ -1,23 +1,69 @@
 
 /*Väriasetukset*/
 
+:root{
+--navbar: #00000069;
+--alert: #cd02a1;
+    
+--main:#fff; /*Laatikoiden väri*/
+--main1:#fff; /*Muiden laatikoiden värit*/
+
+/*Viestit-Osio*/
+--border:#099dbe;
+--viestit1:#fff; /*Viestien taustaväri*/
+    
+/*Työjärjestys*/
+--tunti:#fafafa; /*Tuntien värit*/
+--tunti1:#000; /*Tuntien reunat*/
+    
+/*OPINNOT-Sivu - (Pak)olliset, (syv)entävät ja (sov)eltavat*/
+/*Pakolliset*/
+--pak: #88ef75b3;/*Laatikon väri*/
+--pak1: #1aa400; /*Laatikon reunat*/
+/*Syventävät*/
+--syv: #ecff31;  /*Laatikon väri*/
+--syv1: #ffe528; /*Laatikon reunat*/
+/*Soveltavat*/
+--sov: #fff;     /*Laatikon väri*/
+--sov1: #999999; /*Laatikon reunat*/
+}
+
+
 /*Yläpalkin väri*/
 .navbar {
-    background: #00000069
+    background: var(--navbar) !important;
 }
 /*Ilmoitusten väri*/
 .badge, .label {
-    background: #cd02a1 !important
+    background: var(--blue) !important
     
 }
+/*Laatikoiden pääväri*/
+.panel{
+background: var(--main); /*Pääväri*/
+}
+
+.panel .panel-side{
+background: var(--main1); /*Toinen väri*/
+}
+
+.table > tbody {
+    background-color: var(--main); /*Table-osien taustaväri*/
+}
+
+.table > tbody > tr:nth-child(2n+1) > td,
+.table > tbody > tr:nth-child(2n+1) > th{ /*Table-osien väri*/
+    background-color: var(--main1);
+}
+
 
 
 /* LUKUJÄRJESTYS*/
 
 /* Tuntien värit */
 .schedule .block-area-container .schedule-container .block {
-    background-color:#fff!important;
-    border-color: #026d00!important;
+    background-color:var(--tunti)!important;
+    border-color: var(--tunti1)!important;
     border: 1.4px solid
 }
 
@@ -25,20 +71,20 @@
 
 /*Pakollisten aineiden väri*/
 #choices-tree .c-type34-graded{
-    background: #88ef75b3;
-    border-color: #1aa400 ;
+    background: var(--pak);
+    border-color: var(--pak1);
 }
 
 /*Syventävien aineiden väri*/
 #choices-tree .c-type36-graded{
-    background: #ecff31;
-    border-color: #ffe528;
+    background: var(--syv);
+    border-color: var(--syv1);
 }
 
 /* Soveltavien aineiden värit*/
 #choices-tree .c-type37-graded{
-    background: #FFFFFF;
-    border-color: #999999;
+    background: var(--sov);
+    border-color: var(--sov1);
 }
 
 /* Viestit - Osio */
@@ -46,17 +92,18 @@
 /* Viestiosion reunat */
 .nav-tabs:not(.navbar-nav) + .tab-content {
   margin-top: 0;
-  border-top: 2px solid #099dbe;
-  border-left:2px solid #099dbe;
-  border-right:2px solid #099dbe;
+  border-top: 2px solid var(--border);
+  border-left:2px solid var(--border);
+  border-right:2px solid var(--border);
 }
+
 
 /*Viestien taustaväri*/
 .cke_editable {
   font-size: 13px;
   line-height: 1.6;
   word-wrap: break-word;
-  background: #fff !important
+  background: var(--viestit1) !important
 }
 
 /*Nappien Reunojen värit, vaihda astetta (100deg) löytääksesi sopiva väri. */
@@ -72,9 +119,6 @@ li.active:not(.tabdrop) > a:hover:before {
 /*Muuttaa ilmoituksen värin viestit-osion yläpalkeissa, peruu edellisen koodinpätkän vaikutuksen, ei tarvitse koskea. */
 li.active.wide a span.badge{
     filter: hue-rotate(-100deg);
-}
-.nav-tabs.nav-tabs-primary li.wide a span.badge{
-    filter: hue-rotate(-100deg)
 }
 
 /*Muut korjaukset*/
