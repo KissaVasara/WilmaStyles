@@ -1,27 +1,27 @@
 {
-
   "manifest_version": 2,
   "name": "WilmaStyles",
   "version": "1.0",
-
   "description": "Tyylikäs teema Wilman sivustolle.",
-
   "icons": {
     "48": "icons/wilmastyles.png"
   },
-
   "content_scripts": [
     {
-      "matches": ["*://*.inschool.fi/*"],
-      "css": ["styles.css"],
-	  "js" : ["refresh.js"]
+      "matches": [
+        "*://*.inschool.fi/*"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "js": [
+        "refresh.js"
+      ],
+      "run_at": "document_start"
     }
   ],
-  
   "browser_action": {
-  "default_popup": "themes.html",
-  "browser_style": true
-}
-
-
+    "default_popup": "themes.html",
+    "browser_style": true
+  }
 }
