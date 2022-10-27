@@ -1,34 +1,3 @@
-
-/*Väriasetukset*/
-
-:root{
---navbar: #00000069;
---alert: #cd02a1;
-    
---main:#fff; /*Laatikoiden väri*/
---main1:#fff; /*Muiden laatikoiden värit*/
-
-/*Viestit-Osio*/
---border:#099dbe;
---viestit1:#fff; /*Viestien taustaväri*/
-    
-/*Työjärjestys*/
---tunti:#fafafa; /*Tuntien värit*/
---tunti1:#000; /*Tuntien reunat*/
-    
-/*OPINNOT-Sivu - (Pak)olliset, (syv)entävät ja (sov)eltavat*/
-/*Pakolliset*/
---pak: #88ef75b3;/*Laatikon väri*/
---pak1: #1aa400; /*Laatikon reunat*/
-/*Syventävät*/
---syv: #ecff31;  /*Laatikon väri*/
---syv1: #ffe528; /*Laatikon reunat*/
-/*Soveltavat*/
---sov: #fff;     /*Laatikon väri*/
---sov1: #999999; /*Laatikon reunat*/
-}
-
-
 /*Yläpalkin väri*/
 .navbar {
     background: var(--navbar) !important;
