@@ -1,10 +1,28 @@
 chrome.runtime.sendMessage({ action: 'requestCSS' }, injectCSS)
 
+chrome.runtime.onMessage.addListener((msg) => {
+  console.log("content script message", msg);
+  if (msg.action === "updateCSS") {
+    console.log("receive updateCSS message")
+    updateCSS(msg)
+  }
+})
+
 function injectCSS(msg) {
-  var style = document.createElement('style');
-  style.id = "WilmaStyles";
-  style.textContent = msg.data;
-  (document.body || document.head || document.documentElement).appendChild(style);
+  if (!document.getElementById("WilmaStyles")) {
+
+    const injectedStyle = document.createElement('style');
+    injectedStyle.id = "WilmaStyles";
+
+    injectedStyle.textContent = msg.data;
+    (document.body || document.head || document.documentElement).appendChild(injectedStyle);
+  }
+}
+
+function updateCSS(msg) {
+  console.log("update CSS");
+  const injectedStyle = document.getElementById("WilmaStyles")
+  injectedStyle.textContent = msg.data;
 }
 
 function refresh() {
