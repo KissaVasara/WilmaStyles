@@ -8,21 +8,25 @@ chrome.runtime.onMessage.addListener((msg) => {
   }
 })
 
+function newStyle(css) {
+  const style = document.createElement("style")
+  style.id = "WilmaStyles"
+  style.textContent = css
+  console.log(css);
+  (document.body || document.head || document.documentElement).appendChild(style);
+}
+
 function injectCSS(msg) {
   if (!document.getElementById("WilmaStyles")) {
-
-    const injectedStyle = document.createElement('style');
-    injectedStyle.id = "WilmaStyles";
-
-    injectedStyle.textContent = msg.data;
-    (document.body || document.head || document.documentElement).appendChild(injectedStyle);
+    console.log("inject CSS");
+    newStyle(msg.data)
   }
 }
 
 function updateCSS(msg) {
   console.log("update CSS");
-  const injectedStyle = document.getElementById("WilmaStyles")
-  injectedStyle.textContent = msg.data;
+  document.getElementById("WilmaStyles").remove()
+  newStyle(msg.data)
 }
 
 function refresh() {

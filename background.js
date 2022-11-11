@@ -3,7 +3,7 @@ function getThemeUrl(name) {
 }
 
 function fetchTheme(name) {
-  return fetch(getThemeUrl("swag")).then(r => r.text());
+  return fetch(getThemeUrl(name)).then(r => r.text());
 }
 
 async function init() {
@@ -16,12 +16,12 @@ async function init() {
     if (msg.action == 'changeTheme') {
       console.log("changing theme to", msg.data)
       fetchTheme(msg.data).then(theme => css = theme)
-      updateThemeInTabs()
+      updateThemeInTabs(css)
     }
   })
 }
 
-async function updateThemeInTabs() {
+async function updateThemeInTabs(css) {
   chrome.tabs.query({ currentWindow: true, active: true }, (tabs) => {
     for (const tab of tabs) {
       chrome.tabs.sendMessage(tab.id, { action: "updateCSS", data: css })
