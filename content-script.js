@@ -4,7 +4,7 @@ chrome.runtime.onMessage.addListener((msg) => {
   console.log("content script message", msg);
   if (msg.action === "updateCSS") {
     console.log("receive updateCSS message")
-    updateCSS(msg)
+    window.location.reload()
   }
 })
 
