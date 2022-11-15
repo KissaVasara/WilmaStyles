@@ -3,7 +3,7 @@
 
 :root{
 --navbar: #00000069;
---alert: #cd02a1;
+--alert: #3172e3;
     
 --main:#fff; /*Laatikoiden väri*/
 --main1:#fff; /*Muiden laatikoiden värit*/
@@ -35,10 +35,13 @@
 }
 /*Ilmoitusten väri*/
 .badge, .label {
-    background: var(--blue) !important
+    background: var(--alert) !important   
 }
 .badge-lg{
     background: var(--alert) !important;
+}
+.span .badge{
+    background:var(--alert) !important;
 }
 /*Laatikoiden pääväri*/
 .panel{
@@ -106,21 +109,6 @@ background: var(--main1); /*Toinen väri*/
   line-height: 1.6;
   word-wrap: break-word;
   background: var(--viestit1) !important
-}
-
-/*Nappien Reunojen värit, vaihda astetta (100deg) löytääksesi sopiva väri. */
-
-li.active:not(.tabdrop) > a:hover:before {
-    filter: hue-rotate(100deg);
-}
-
-.nav-tabs:not(.navbar-nav) > li > a {
-    filter: hue-rotate(0 deg);   
-}
-
-/*Muuttaa ilmoituksen värin viestit-osion yläpalkeissa, peruu edellisen koodinpätkän vaikutuksen, ei tarvitse koskea. */
-li.active.wide a span.badge{
-    filter: hue-rotate(-100deg);
 }
 
 /*Muut korjaukset*/

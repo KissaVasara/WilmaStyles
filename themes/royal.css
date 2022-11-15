@@ -2,7 +2,7 @@
 :root{
     --background:#151414;
     --navbar: #00000069;
-    --alert: #cd02a1;
+    --alert: #FFD700;
         
     --main:#201f1f; /*Laatikoiden väri*/
     --main1:#222121; /*Muiden laatikoiden värit*/
@@ -56,10 +56,16 @@ body{
 }
 /*Ilmoitusten väri*/
 .badge, .label {
-    background: var(--blue) !important   
+    background: var(--alert) !important;  
+    color: black !important;
 }
 .badge-lg{
     background: var(--alert) !important;
+    color: black !important;
+}
+.span .badge{
+    background:var(--alert) !important;
+    color: black !important;
 }
 /*Laatikoiden pääväri*/
 .panel{
@@ -218,11 +224,6 @@ body:not(.wilma){
     filter:invert(89%)
 }
 
-/*Nappien Reunojen värit, vaihda astetta (100deg) löytääksesi sopiva väri. */
-
-li.active:not(.tabdrop) > a:hover:before {
-    filter: hue-rotate(100deg);
-}
 .nav-tabs:not(.navbar-nav) > li > a, .nav-tabs:not(.navbar-nav) > li > a::before, .nav-tabs:not(.navbar-nav) > li > a::after, .nav-tabs:not(.navbar-nav) > li.active:not(.tabdrop) > a, .nav-tabs:not(.navbar-nav) > li.active:not(.tabdrop) > a::before, .nav-tabs:not(.navbar-nav) > li.active:not(.tabdrop) > a::after{
     color: var(--fontcolor) !important;
 }
@@ -234,11 +235,6 @@ li.active:not(.tabdrop) > a:hover:before {
     border-bottom: none;
     transform: translateY(-1px)
 }
-/*Muuttaa ilmoituksen värin viestit-osion yläpalkeissa, peruu edellisen koodinpätkän vaikutuksen, ei tarvitse koskea. */
-li.active.wide a span.badge{
-    filter: hue-rotate(-100deg);
-}
-
 /*Automaattinen uloskirjautuminen*/
 .modal-content{
     background: var(--main1);
