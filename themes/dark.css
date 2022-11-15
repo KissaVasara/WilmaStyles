@@ -2,7 +2,7 @@
 :root{
     --background:#151414;
     --navbar: #00000069;
-    --alert: #cd02a1;
+    --alert: #2b7fd4;
         
     --main:#201f1f; /*Laatikoiden väri*/
     --main1:#222121; /*Muiden laatikoiden värit*/
@@ -56,10 +56,13 @@ body{
 }
 /*Ilmoitusten väri*/
 .badge, .label {
-    background: var(--blue) !important
+    background: var(--alert) !important
 }
 .badge-lg{
     background: var(--alert) !important;
+}
+.span .badge{
+    background:var(--alert) !important;
 }
 /*Laatikoiden pääväri*/
 .panel{
@@ -236,9 +239,6 @@ li.active:not(.tabdrop) > a:hover:before {
     transform: translateY(-1px)
 }
 /*Muuttaa ilmoituksen värin viestit-osion yläpalkeissa, peruu edellisen koodinpätkän vaikutuksen, ei tarvitse koskea. */
-li.active.wide a span.badge{
-    filter: hue-rotate(-100deg);
-}
 
 /*Automaattinen uloskirjautuminen*/
 .modal-content{
