@@ -23,12 +23,6 @@ function injectCSS(msg) {
   }
 }
 
-function updateCSS(msg) {
-  console.log("update CSS");
-  document.getElementById("WilmaStyles").remove()
-  newStyle(msg.data)
-}
-
 function refresh() {
   window.location.reload()
 }
