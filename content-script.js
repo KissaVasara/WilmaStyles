@@ -1,10 +1,8 @@
 chrome.runtime.sendMessage({ action: 'requestCSS' }, injectCSS)
 
 chrome.runtime.onMessage.addListener((msg) => {
-  console.log("content script message", msg);
   if (msg.action === "updateCSS") {
-    console.log("receive updateCSS message")
-    window.location.reload()
+    document.getElementById("WilmaStyles").textContent = msg.data
   }
 })
 
@@ -12,13 +10,11 @@ function newStyle(css) {
   const style = document.createElement("style")
   style.id = "WilmaStyles"
   style.textContent = css
-  console.log(css);
   (document.body || document.head || document.documentElement).appendChild(style);
 }
 
 function injectCSS(msg) {
   if (!document.getElementById("WilmaStyles")) {
-    console.log("inject CSS");
     newStyle(msg.data)
   }
 }
