@@ -56,8 +56,10 @@ body{
 }
 /*Ilmoitusten väri*/
 .badge, .label {
-    background: var(--blue) !important
-    
+    background: var(--blue) !important   
+}
+.badge-lg{
+    background: var(--alert) !important;
 }
 /*Laatikoiden pääväri*/
 .panel{
