@@ -33,7 +33,9 @@ async function init() {
       console.log("changing theme to", msg.data)
       fetchTheme(msg.data).then(theme => css = theme)
       setThemeFromStorage({name: msg.data})
-      updateThemeInTabs(css)
+      fetchTheme(msg.data).then(style => {
+        updateThemeInTabs(style)
+      })
     }
     })
   }
@@ -41,6 +43,7 @@ async function init() {
   async function updateThemeInTabs(css) {
   chrome.tabs.query({ currentWindow: true, active: true }, (tabs) => {
     for (const tab of tabs) {
+      console.log("sendMessage UpdateCSS", css);
       chrome.tabs.sendMessage(tab.id, { action: "updateCSS", data: css })
     }
   })
