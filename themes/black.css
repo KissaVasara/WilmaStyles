@@ -1,0 +1,73 @@
+body {
+  background-color: black !important;
+  color: white;
+  font-family: system-ui !important;
+}
+
+* {
+  border: none !important;
+}
+
+nav {
+  background: #111 !important;
+}
+
+body .nav li a,
+body .nav li a::before,
+body .nav li a::after,
+.nav-tabs:not(.navbar-nav) > li.active:not(.tabdrop) > a.pressed::before,
+.nav-tabs:not(.navbar-nav) > li.active:not(.tabdrop) > a, 
+.nav-tabs:not(.navbar-nav) > li.active:not(.tabdrop) > a.pressed::before,
+.nav-tabs:not(.navbar-nav) > li.active:not(.tabdrop) > a::before,
+.nav-tabs:not(.navbar-nav) > li.active:not(.tabdrop) > a.pressed::before,
+.nav-tabs:not(.navbar-nav) > li.active:not(.tabdrop) > a::after{
+  background: none !important;
+}
+
+body .nav li[role=presentation] a {
+  color: #dbdbdb;
+}
+
+body .nav li.active[role=presentation] a {
+  color: white !important;
+  font-weight: bold;
+}
+
+.breadcrumb li {
+  color: #bababa !important;
+}
+
+div.panel {
+  margin: 20px !important;
+  border-radius: 10px;
+}
+
+div.panel,
+div.panel-side,
+td,
+th, .alert, .dropdown button, .dropdown-menu, .dropdown-menu a:hover,
+.datepick-popup {
+  background: #111 !important;
+}
+
+#schedule .block {
+  background-color: #1c1c1c !important;
+}
+
+p,
+label, .dropdown-menu a {
+  color: white !important;
+}
+
+div,
+td,
+input,
+button,
+table.vismaDatePickerCalendar *,
+p.sub-text {
+  color: #ccc !important;
+}
+
+input {
+  background: #1d1d1d !important;
+}
