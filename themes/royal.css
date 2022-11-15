@@ -7,18 +7,18 @@
     --main:#201f1f; /*Laatikoiden väri*/
     --main1:#222121; /*Muiden laatikoiden värit*/
     --dropdown: #050505d4;
-    --fontcolor:#fff; /*Tekstin väri*/
-    --fontcolor1:#fff; /*Muun tekstin väri*/
+    --fontcolor:#FFD700; /*Tekstin väri*/
+    --fontcolor1:#FFD700; /*Muun tekstin väri*/
     --linkcolor:#fff;
         
     
     /*Viestit-Osio*/
-    --border:#099dbe;
+    --border:#FFD700;
     --viestit1:#1c1b1b; /*Viestien taustaväri*/
         
     /*Työjärjestys*/
     --tunti:#2f2f2f; /*Tuntien värit*/
-    --tunti1:#000; /*Tuntien reunat*/
+    --tunti1:#FFD700; /*Tuntien reunat*/
         
     /*OPINNOT-Sivu - (Pak)olliset, (syv)entävät ja (sov)eltavat*/
     /*Pakolliset*/
@@ -37,7 +37,7 @@
 
 /*Tekstien värit*/
 body{
-    background: var(--background) !important;
+    background-color: navy;
     color: var(--fontcolor);
 }
 .secondary-text{
@@ -166,7 +166,6 @@ table.vismaDatePickerCalendar th span{
   border-right:2px solid var(--border);
 }
 
-/*Vastauksen säädökset*/
 .dock-floating{
     background:var(--main) !important;
 }
@@ -182,7 +181,7 @@ table.vismaDatePickerCalendar th span{
   font-size: 13px;
   line-height: 1.6;
   word-wrap: break-word;
-  background-color: var(--main) !important;
+  background: var(--main) !important
 }
 
 body:not(.wilma){
@@ -290,6 +289,11 @@ color: var(--fontcolor);
 .draggable-list .draggable-list-item {
     background-color: var(--main1);
 }
+
+/*Kultainen logo*/
+.wilma-logo{
+    filter: invert(50%) sepia(13%) saturate(1155%) hue-rotate(21deg) brightness(160%) contrast(100%);
+}
 /*Muut korjaukset*/
 
 /* Poistaa kalenterin etusivulta */
@@ -306,7 +310,8 @@ color: var(--fontcolor);
   -webkit-border-radius:40px; /* for Webkit-Browsers */
   border-radius:40px; /* regular */
   box-shadow: 0 0px 1px rgba(255, 255, 255, .7);
-  border-width: 0px;
+  border-width: 2px;
+  border-color: #FFD700;
   }
   .panel .panel-side {
       border-left: 0px;
@@ -371,13 +376,17 @@ color: var(--fontcolor);
   .nav-tabs:not(.navbar-nav) > li.active:not(.tabdrop) > a {
       background: var(--main2) !important;
       border-radius: 1em 1em 0 0;
-      border: 2px solid #099dbe;
+      border: 2px solid #FFD700;
       border-bottom: none;
       transform: translateY(-1px)
   }
   
   .nav-tabs:not(.navbar-nav) > li::after{
       content:none;
+  }
+  
+  .navbar .nav > li > a, .navbar .nav > li.active > a{
+      color: var(--fontcolor);
   }
   /* Kirjautumissivun muutokset */
 
