@@ -1,2 +1,36 @@
-:root {
+.wilmastyles-logo{
+  width:190px;
+  height:30px;
+  padding: 2px 0px 0px 2px;
+}
+.browser-style{
+width:120px;
+height:20px;
+border-radius:5px;
+border: 1px solid rgb(0, 0, 0);
+background: url("images/color.png");
+background-size: 120px 20px;
+}
+/*Muuttaa popupin kokoa*/
+.popupcontainer {
+  width: 225px;
+  height: 80px;
+  overflow: hidden; /*Estää scrollaamisen*/
+  border-radius:7px;
+  border: 2px solid rgb(0, 0, 0, 0.5);
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
 }
