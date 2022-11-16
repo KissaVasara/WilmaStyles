@@ -53,6 +53,10 @@ chrome.webNavigation.onCommitted.addListener(function (o) {
   chrome.tabs.executeScript(o.tabId, {
     file: "content-script.js"
   });
+}, {
+  url: [{
+    hostContains: "inschool.fi",
+  }]
 });
 
 

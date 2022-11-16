@@ -11,17 +11,6 @@
     "storage",
     "*://*.inschool.fi/*"
   ],
-  "content_scripts": [
-    {
-      "matches": [
-        "*://*.inschool.fi/*"
-      ],
-      "js": [
-        "content-script.js"
-      ],
-      "run_at": "document_start"
-    }
-  ],
   "background": {
     "scripts": ["background.js"],
     "persistent": true
