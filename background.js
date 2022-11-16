@@ -3,7 +3,7 @@ function getThemeUrl(name) {
 }
 async function getThemeFromStorage() {
   return new Promise(async (resolve) => {
-    chrome.storage.local.get("theme", (({theme}) => {
+    chrome.storage.local.get("theme", (({ theme }) => {
       resolve(theme ?? {
         name: "swag"
       })
@@ -12,8 +12,8 @@ async function getThemeFromStorage() {
 }
 
 async function setThemeFromStorage(theme) {
-  console.log("set",theme);
-  chrome.storage.local.set({"theme": theme})
+  console.log("set", theme);
+  chrome.storage.local.set({ "theme": theme })
 }
 
 function fetchTheme(name) {
@@ -31,16 +31,16 @@ async function init() {
     }
     if (msg.action == 'changeTheme') {
       console.log("changing theme to", msg.data)
-      fetchTheme(msg.data).then(theme => css = theme)
-      setThemeFromStorage({name: msg.data})
+      setThemeFromStorage({ name: msg.data })
       fetchTheme(msg.data).then(style => {
+        css = style
         updateThemeInTabs(style)
       })
     }
-    })
-  }
+  })
+}
 
-  async function updateThemeInTabs(css) {
+async function updateThemeInTabs(css) {
   chrome.tabs.query({ currentWindow: true, active: true }, (tabs) => {
     for (const tab of tabs) {
       console.log("sendMessage UpdateCSS", css);

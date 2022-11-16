@@ -6,17 +6,11 @@ chrome.runtime.onMessage.addListener((msg) => {
   }
 })
 
-function newStyle(css) {
+function injectCSS(msg) {
   const style = document.createElement("style")
   style.id = "WilmaStyles"
-  style.textContent = css
+  style.textContent = msg.data;
   (document.body || document.head || document.documentElement).appendChild(style);
-}
-
-function injectCSS(msg) {
-  if (!document.getElementById("WilmaStyles")) {
-    newStyle(msg.data)
-  }
 }
 
 function refresh() {

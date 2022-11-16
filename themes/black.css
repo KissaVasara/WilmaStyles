@@ -4,6 +4,14 @@ body {
   font-family: system-ui !important;
 }
 
+body.login-page {
+  background-image: none;
+}
+
+.login-page .login-box, .login-page .login-footer, .login-box .login-content {
+  background: #111 !important;
+}
+
 * {
   border: none !important;
 }
