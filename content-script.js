@@ -11,6 +11,17 @@ function injectCSS(msg) {
   style.id = "WilmaStyles"
   style.textContent = msg.data;
   (document.body || document.head || document.documentElement).appendChild(style);
+
+  injectIframes(msg.data)
+}
+
+function injectIframes(css) {
+  document.querySelectorAll("iframe").forEach(iframe =>{
+    console.log("inject iframe");
+    var style = document.createElement("style")
+    style.innerHTML = css
+    iframe.contentWindow.document.body.appendChild(style)
+  })
 }
 
 function refresh() {
