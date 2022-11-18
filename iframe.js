@@ -10,6 +10,7 @@ document.querySelectorAll("iframe").forEach(iframe => {
   let brightness =
     getComputedStyle(ws).getPropertyValue("--brightness")
   // lord forgive me for what i'm about to do
+  // ^^why must you make me cry
     setTimeout(() => {
     if (brightness.includes("dark")) {
       var style = iframe.contentDocument.createElement("style")

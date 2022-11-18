@@ -84,3 +84,12 @@ p.sub-text {
 input {
   background: #1d1d1d !important;
 }
+
+/*Opinnot-sivun värit*/
+#choices-tree{
+  background: #111;
+}
+
+.well{
+  background: #111;
+}
