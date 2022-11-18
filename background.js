@@ -39,6 +39,7 @@ async function init() {
     }
   })
 }
+init()
 
 async function updateThemeInTabs(css) {
   chrome.tabs.query({ currentWindow: true, active: true }, (tabs) => {
@@ -49,4 +50,14 @@ async function updateThemeInTabs(css) {
   })
 }
 
-init()
+chrome.webNavigation.onCommitted.addListener(function (o) {
+  console.log("send iframe mesage");
+  chrome.tabs.executeScript(o.tabId, {
+    file: "iframe.js",
+    runAt: "document_end"
+  });
+}, {
+  url: [{
+    hostContains: "inschool.fi",
+  }]
+});
