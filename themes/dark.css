@@ -1,5 +1,8 @@
 /*Variables*/
 :root{
+    /* iframe.js reads this */
+    --brightness: dark; 
+      
     --background:#151414;
     --navbar: #00000069;
     --alert: #2b7fd4;
