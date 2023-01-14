@@ -2,9 +2,12 @@
 /*Väriasetukset*/
 
 :root{
+--brightness: white; /*Iframe.js reads this*/
+
 --navbar: #00000069;
 --alert: #3172e3;
-    
+
+
 --main:#fff; /*Laatikoiden väri*/
 --main1:#fff; /*Muiden laatikoiden värit*/
 
@@ -28,7 +31,9 @@
 --sov1: #999999; /*Laatikon reunat*/
 }
 
-
+body{
+    color:black !important;
+}
 /*Yläpalkin väri*/
 .navbar {
     background: var(--navbar) !important;
