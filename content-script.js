@@ -11,8 +11,16 @@ function injectCSS(msg) {
   style.id = "WilmaStyles"
   style.textContent = msg.data;
   (document.body || document.head || document.documentElement).appendChild(style);
+  injectIframes();
 }
 
+function injectIframes() { /*run iframe.js so you can change themes while viewing a message */
+  fetch("iframe.js")
+    .then(response => response.text())
+    .then(script => {
+      eval(script);
+    });
+}
 
 function refresh() {
   window.location.reload()
