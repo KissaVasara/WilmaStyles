@@ -4,23 +4,17 @@ html,body {
   color: white !important;
 }`
 
-document.querySelectorAll("iframe").forEach(iframe => {
-
-  const ws = document.getElementById("WilmaStyles")
-  let brightness =
-    getComputedStyle(ws).getPropertyValue("--brightness")
-  // lord forgive me for what i'm about to do
-  // ^^why must you make me cry
-    setTimeout(() => {
+window.addEventListener("load", function() { /*Wait for page to be loaded */
+  document.querySelectorAll("iframe").forEach(iframe => {
+    const ws = document.getElementById("WilmaStyles")
+    let brightness = getComputedStyle(ws).getPropertyValue("--brightness")
     if (brightness.includes("dark")) {
       var style = iframe.contentDocument.createElement("style")
       iframe.setAttribute("allowTransparency", "true")
-      style.innerHTML = iframeCSS
-      console.log(iframe.contentDocument.documentElement)
-
+      style.innerHTML = iframeCSS;
       iframe.contentDocument.documentElement.appendChild(style)
     } else {
       console.log("theme does not have dark brightness")
     }
-  }, 500);
-})
+  });
+});
