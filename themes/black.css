@@ -1,20 +1,35 @@
 :root {
   /* iframe.js reads this */
-  --brightness: dark; 
+  --brightness: dark;
 }
 
 body {
   background-color: black !important;
   color: white;
   font-family: system-ui !important;
+  color-scheme: dark;
 }
 
 body.login-page {
   background-image: none;
 }
 
-.login-page .login-box, .login-page .login-footer, .login-box .login-content {
+.login-page .login-box,
+.login-page .login-footer,
+.login-box .login-content {
   background: #111 !important;
+}
+
+.dock-floating {
+  background-color: black !important;
+}
+
+.dock-floating nav {
+  background: black !important;
+}
+
+.pagination>li>a.btn {
+  background: #111;
 }
 
 * {
@@ -25,15 +40,19 @@ nav {
   background: #111 !important;
 }
 
+nav li:hover {
+  background: #222 !important;
+}
+
 body .nav li a,
 body .nav li a::before,
 body .nav li a::after,
-.nav-tabs:not(.navbar-nav) > li.active:not(.tabdrop) > a.pressed::before,
-.nav-tabs:not(.navbar-nav) > li.active:not(.tabdrop) > a, 
-.nav-tabs:not(.navbar-nav) > li.active:not(.tabdrop) > a.pressed::before,
-.nav-tabs:not(.navbar-nav) > li.active:not(.tabdrop) > a::before,
-.nav-tabs:not(.navbar-nav) > li.active:not(.tabdrop) > a.pressed::before,
-.nav-tabs:not(.navbar-nav) > li.active:not(.tabdrop) > a::after{
+.nav-tabs:not(.navbar-nav)>li.active:not(.tabdrop)>a.pressed::before,
+.nav-tabs:not(.navbar-nav)>li.active:not(.tabdrop)>a,
+.nav-tabs:not(.navbar-nav)>li.active:not(.tabdrop)>a.pressed::before,
+.nav-tabs:not(.navbar-nav)>li.active:not(.tabdrop)>a::before,
+.nav-tabs:not(.navbar-nav)>li.active:not(.tabdrop)>a.pressed::before,
+.nav-tabs:not(.navbar-nav)>li.active:not(.tabdrop)>a::after {
   background: none !important;
 }
 
@@ -58,8 +77,14 @@ div.panel {
 div.panel,
 div.panel-side,
 td,
-th, .alert, .dropdown button, .dropdown-menu, .dropdown-menu a:hover,
-.datepick-popup {
+th,
+.alert,
+.dropdown button,
+.dropdown-menu,
+.dropdown-menu a:hover,
+.datepick-popup,
+#choices-tree,
+.well {
   background: #111 !important;
 }
 
@@ -68,7 +93,8 @@ th, .alert, .dropdown button, .dropdown-menu, .dropdown-menu a:hover,
 }
 
 p,
-label, .dropdown-menu a {
+label,
+.dropdown-menu a {
   color: white !important;
 }
 
@@ -86,10 +112,6 @@ input {
 }
 
 /*Opinnot-sivun värit*/
-#choices-tree{
-  background: #111;
-}
-
-.well{
-  background: #111;
+#choices-tree li a[class$=graded] td {
+  background-color: #333 !important;
 }
