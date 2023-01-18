@@ -1,8 +1,9 @@
 const iframeCSS = `
-html,body {
+html,body,.m-replybox {
   background-color: transparent !important; 
   color: white !important;
-}`
+}
+`
 
 window.addEventListener("load", function() { /*Wait for page to be loaded */
   document.querySelectorAll("iframe").forEach(iframe => {
