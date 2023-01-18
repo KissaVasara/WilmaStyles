@@ -3,6 +3,7 @@ chrome.runtime.sendMessage({ action: 'requestCSS' }, injectCSS)
 chrome.runtime.onMessage.addListener((msg) => {
   if (msg.action === "updateCSS") {
     document.getElementById("WilmaStyles").textContent = msg.data
+    injectIframes()
   }
 })
 
@@ -11,15 +12,10 @@ function injectCSS(msg) {
   style.id = "WilmaStyles"
   style.textContent = msg.data;
   (document.body || document.head || document.documentElement).appendChild(style);
-  injectIframes();
 }
 
-function injectIframes() { /*run iframe.js so you can change themes while viewing a message */
-  fetch("iframe.js")
-    .then(response => response.text())
-    .then(script => {
-      eval(script);
-    });
+function injectIframes() {
+  dispatchEvent(new Event("iframe_reinject"))
 }
 
 function refresh() {

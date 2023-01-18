@@ -44,17 +44,15 @@ init()
 async function updateThemeInTabs(css) {
   chrome.tabs.query({ currentWindow: true, active: true }, (tabs) => {
     for (const tab of tabs) {
-      console.log("sendMessage UpdateCSS", css);
       chrome.tabs.sendMessage(tab.id, { action: "updateCSS", data: css })
     }
   })
 }
 
 chrome.webNavigation.onCommitted.addListener(function (o) {
-  console.log("send iframe mesage");
   chrome.tabs.executeScript(o.tabId, {
     file: "iframe.js",
-    runAt: "document_end"
+    runAt: "document_start"
   });
 }, {
   url: [{
