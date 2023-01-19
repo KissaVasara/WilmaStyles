@@ -40,8 +40,13 @@ nav {
   background: #111 !important;
 }
 
+nav :focus {
+  box-shadow: none !important;
+}
+
 nav li:hover {
   background: #222 !important;
+  color: red !important;
 }
 
 body .nav li a,
@@ -84,7 +89,8 @@ th,
 .dropdown-menu a:hover,
 .datepick-popup,
 #choices-tree,
-.well {
+.well,
+.login-header {
   background: #111 !important;
 }
 
