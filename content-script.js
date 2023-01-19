@@ -18,8 +18,14 @@ function injectIframes() {
   dispatchEvent(new Event("iframe_reinject"))
 }
 
-function refresh() {
-  window.location.reload()
+// from wilmonium -- https://github.com/developerfromjokela/wilmonium/blob/main/js/wilmonium.js
+async function refresh() {
+  const res = await fetch(document.URL + "/overview")
+  // session expired
+  if (res.redirected) {
+    window.location.reload()
+    return
+  }
+  window.AutoLogoutWarning.tMinusLogout = window.autoLogoutDelay;
 }
-/*Refreshes the page every 20 minutes to prevent auto log off. My dumbass couldn't find a better way.*/
-setInterval(refresh, 1200000)
+setInterval(refresh, 2 * 60 * 1000)

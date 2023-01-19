@@ -44,9 +44,16 @@ nav :focus {
   box-shadow: none !important;
 }
 
-nav li:hover {
-  background: #222 !important;
-  color: red !important;
+nav li.active {
+  background-color: #000;
+}
+
+nav li:hover:not(.active) {
+  background-color: #222 !important;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #222 !important;
 }
 
 body .nav li a,
@@ -76,7 +83,6 @@ body .nav li.active[role=presentation] a {
 
 div.panel {
   margin: 20px !important;
-  border-radius: 10px;
 }
 
 div.panel,
