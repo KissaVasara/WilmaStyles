@@ -5,7 +5,7 @@ async function getThemeFromStorage() {
   return new Promise(async (resolve) => {
     chrome.storage.local.get("theme", (({ theme }) => {
       resolve(theme ?? {
-        name: "swag"
+        name: "none"
       })
     }))
   })
