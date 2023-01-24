@@ -3,6 +3,10 @@
   --brightness: dark;
 }
 
+* {
+  border: none !important;
+}
+
 body {
   background-color: black !important;
   color: white;
@@ -19,7 +23,6 @@ body.login-page {
   background: #111 !important;
 }
 
-
 .dock-floating {
   background-color: black !important;
 }
@@ -30,10 +33,6 @@ body.login-page {
 
 .pagination>li>a.btn {
   background: #111;
-}
-
-* {
-  border: none !important;
 }
 
 nav {
@@ -68,6 +67,16 @@ body .nav li a::after,
   background: none !important;
 }
 
+body .nav {
+  margin-left: 15px;
+}
+
+body .nav li[role=presentation] {
+  background-color: #111;
+  margin-inline: 10px;
+  padding-bottom: 5px;
+}
+
 body .nav li[role=presentation] a {
   color: #dbdbdb;
 }
@@ -75,6 +84,10 @@ body .nav li[role=presentation] a {
 body .nav li.active[role=presentation] a {
   color: white !important;
   font-weight: bold;
+}
+
+.link-with-arrow::before {
+  display: none;
 }
 
 .breadcrumb li {
@@ -90,13 +103,14 @@ div.panel-side,
 td,
 th,
 .alert,
-.dropdown button,
 .dropdown-menu,
 .dropdown-menu a:hover,
 .datepick-popup,
 #choices-tree,
 .well,
-.login-header {
+.login-header,
+.sidepanel,
+.popover {
   background: #111 !important;
 }
 
@@ -119,11 +133,24 @@ p.sub-text {
   color: #ccc !important;
 }
 
-input {
+input,
+.dropdown button {
   background: #1d1d1d !important;
+}
+
+input[type=checkbox] {
+  color-scheme: dark;
+}
+
+.dropdown .caret {
+  filter: invert(100%);
 }
 
 /*Opinnot-sivun värit*/
 #choices-tree li a[class$=graded] td {
   background-color: #333 !important;
+}
+
+footer img {
+  filter: brightness(0) invert(1);
 }
