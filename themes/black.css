@@ -81,6 +81,10 @@ body .nav li[role=presentation] a {
   color: #dbdbdb;
 }
 
+body .nav li[role=presentation]:hover { 
+  background-color: #222;
+}
+
 body .nav li.active[role=presentation] a {
   color: white !important;
   font-weight: bold;
@@ -110,7 +114,8 @@ th,
 .well,
 .login-header,
 .sidepanel,
-.popover {
+.popover,
+.tooltip, .modal {
   background: #111 !important;
 }
 
@@ -149,6 +154,15 @@ input[type=checkbox] {
 /*Opinnot-sivun värit*/
 #choices-tree li a[class$=graded] td {
   background-color: #333 !important;
+}
+
+/*Automaattinen uloskirjautuminen*/
+.modal-content{
+  background: #111;
+}
+.modal-header{
+  background: #111;
+  box-shadow: none !important;
 }
 
 footer img {
