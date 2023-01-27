@@ -18,14 +18,11 @@ function injectIframes() {
   dispatchEvent(new Event("iframe_reinject"))
 }
 
-// from wilmonium -- https://github.com/developerfromjokela/wilmonium/blob/main/js/wilmonium.js
-async function refresh() {
-  const res = await fetch(document.URL + "/overview")
-  // session expired
-  if (res.redirected) {
-    window.location.reload()
-    return
-  }
-  window.AutoLogoutWarning.tMinusLogout = window.autoLogoutDelay;
-}
-setInterval(refresh, 2 * 60 * 1000)
+document.addEventListener('DOMContentLoaded', () => {
+  // keep_session needs to access window.AutoLogoutWarning
+  // which is not available in content script
+  let script = document.createElement('script')
+  script.src = chrome.extension.getURL('keep_session.js')
+  script.defer = true
+  document.body.appendChild(script)
+})
