@@ -119,6 +119,14 @@ th,
   background: #111 !important;
 }
 
+table.vismaDatePickerCalendar td a {
+  text-align: center;
+}
+
+table.vismaDatePickerCalendar td a:hover {
+background: #333;
+}
+
 #schedule .block {
   background-color: #1c1c1c !important;
 }
